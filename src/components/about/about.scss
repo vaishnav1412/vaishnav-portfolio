@@ -1,0 +1,233 @@
+.about-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-subtitle {
+      color: var(--primary-color);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-primary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      .stat-item {
+        background: var(--bg-secondary);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        .stat-icon {
+          width: 48px;
+          height: 48px;
+          background: var(--gradient-primary);
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 1.5rem;
+        }
+
+        .stat-info {
+          .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: block;
+          }
+
+          .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+          }
+        }
+      }
+    }
+
+    .about-text {
+      margin-bottom: 2rem;
+
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+    }
+
+    .personal-info {
+      .info-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        .info-icon {
+          color: var(--primary-color);
+          font-size: 1.25rem;
+        }
+
+        div {
+          .info-label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+          .info-value {
+            color: var(--text-primary);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .about-right {
+      .interests-section {
+        margin-bottom: 2rem;
+
+        h3 {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+
+        .interests-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+
+          .interest-item {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: all 0.3s;
+
+            &:hover {
+              background: var(--gradient-primary);
+              color: white;
+              transform: translateY(-3px);
+            }
+
+            svg {
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+
+            span {
+              display: block;
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+
+      .languages-section {
+        margin-bottom: 2rem;
+
+        h3 {
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+
+        .language-item {
+          display: flex;
+          justify-content: space-between;
+          padding: 0.75rem 0;
+          border-bottom: 1px solid var(--border-color);
+
+          .language-name {
+            font-weight: 500;
+          }
+
+          .language-level {
+            color: var(--primary-color);
+          }
+        }
+      }
+
+      .quote-section {
+        background: var(--gradient-primary);
+        color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+
+        .quote-icon {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          font-size: 4rem;
+          opacity: 0.2;
+        }
+
+        .quote-text {
+          font-size: 1.1rem;
+          font-style: italic;
+          margin-bottom: 1rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .quote-author {
+          font-size: 0.875rem;
+          opacity: 0.9;
+          position: relative;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

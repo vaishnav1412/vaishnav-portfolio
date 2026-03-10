@@ -1,0 +1,184 @@
+.achievements-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .section-subtitle {
+      color: var(--primary-color);
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .title-underline {
+      width: 80px;
+      height: 4px;
+      background: var(--gradient-primary);
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+  }
+
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+
+    .achievement-card {
+      display: flex;
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 1rem;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .achievement-icon {
+        width: 48px;
+        height: 48px;
+        background: var(--gradient-primary);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        flex-shrink: 0;
+      }
+
+      .achievement-content {
+        flex: 1;
+
+        h3 {
+          font-size: 1rem;
+          margin-bottom: 0.25rem;
+          color: var(--text-primary);
+        }
+
+        .achievement-issuer {
+          color: var(--primary-color);
+          font-size: 0.875rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .achievement-date {
+          color: var(--text-secondary);
+          font-size: 0.75rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .achievement-description {
+          color: var(--text-secondary);
+          font-size: 0.875rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .credential-link {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-size: 0.875rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // Testimonials
+  .testimonials-section {
+    .testimonials-title {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+
+      .testimonial-card {
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 1rem;
+        transition: all 0.3s;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 1rem;
+
+          .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-primary);
+          }
+
+          p {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+          }
+        }
+
+        .testimonial-rating {
+          display: flex;
+          gap: 0.25rem;
+          margin-bottom: 1rem;
+
+          .star-filled {
+            color: #fbbf24;
+          }
+        }
+
+        .testimonial-content {
+          color: var(--text-secondary);
+          font-size: 0.875rem;
+          line-height: 1.6;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
