@@ -80,9 +80,9 @@ const Portfolio = () => {
     sections[sectionId].current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Toggle dark mode
+  // Toggle dark mode — apply .dark on <html> so CSS variables cascade everywhere
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", isDarkMode);
+    document.documentElement.classList.toggle("dark", isDarkMode);
   }, [isDarkMode]);
 
   return (
@@ -116,8 +116,8 @@ const Portfolio = () => {
       {/* Main Content */}
       <main>
         {/* Hero Section - Imported Component */}
-        <div ref={sections.home}>
-          <Hero personalInfo={personalInfo} scrollToSection={scrollToSection} />
+        <div  ref={sections.home}>
+          <Hero  personalInfo={personalInfo} scrollToSection={scrollToSection} />
         </div>
 
         {/* About Section - Imported Component */}

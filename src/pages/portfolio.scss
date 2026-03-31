@@ -1,4 +1,6 @@
-// Variables
+// ==========================================
+// VARIABLES
+// ==========================================
 :root {
   --primary-color: #6366f1;
   --primary-dark: #4f46e5;
@@ -14,23 +16,44 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  
+  // Gradients
   --gradient-primary: linear-gradient(135deg, #6366f1, #8b5cf6);
   --gradient-secondary: linear-gradient(135deg, #10b981, #34d399);
   --gradient-accent: linear-gradient(135deg, #f59e0b, #fbbf24);
 }
 
+// ==========================================
+// DARK MODE VARIABLES
+// ==========================================
+// Applied to <html> element so vars cascade to ALL elements (body, navbar, etc.)
+:root.dark,
 .dark {
   --primary-color: #818cf8;
   --primary-dark: #6366f1;
+  --secondary-color: #34d399;
+  --accent-color: #fbbf24;
   --text-primary: #f9fafb;
   --text-secondary: #9ca3af;
   --bg-primary: #111827;
   --bg-secondary: #1f2937;
   --bg-tertiary: #374151;
   --border-color: #374151;
+  
+  // Shadows adjusted for dark backgrounds
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+
+  --gradient-primary: linear-gradient(135deg, #818cf8, #a78bfa);
+  --gradient-secondary: linear-gradient(135deg, #10b981, #34d399);
+  --gradient-accent: linear-gradient(135deg, #f59e0b, #fbbf24);
 }
 
-// Global Styles
+// ==========================================
+// GLOBAL STYLES
+// ==========================================
 * {
   margin: 0;
   padding: 0;
@@ -44,9 +67,19 @@ body {
   line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
+  padding-top: 70px; // FIX: Prevents content from hiding behind fixed navbar
 }
 
-// Custom Cursor
+// FIX: Extra space for mobile navbar
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+}
+
+// ==========================================
+// CUSTOM CURSOR
+// ==========================================
 .custom-cursor {
   width: 20px;
   height: 20px;
@@ -64,7 +97,9 @@ body {
   }
 }
 
-// Scroll Progress
+// ==========================================
+// SCROLL PROGRESS BAR
+// ==========================================
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -75,7 +110,9 @@ body {
   transition: width 0.1s;
 }
 
-// Section Header Styles (reusable component - keep for components to use)
+// ==========================================
+// SECTION HEADER STYLES (Reusable)
+// ==========================================
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -110,7 +147,9 @@ body {
   }
 }
 
-// Back to Top Button
+// ==========================================
+// BACK TO TOP BUTTON
+// ==========================================
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -146,7 +185,9 @@ body {
   }
 }
 
-// Global button styles
+// ==========================================
+// GLOBAL BUTTON STYLES
+// ==========================================
 .btn-outline {
   padding: 0.875rem 1.5rem;
   background: transparent;
@@ -185,6 +226,7 @@ body {
   &:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    color: white;
   }
 }
 
@@ -207,7 +249,9 @@ body {
   }
 }
 
-// Animations (keep for components to use)
+// ==========================================
+// ANIMATIONS
+// ==========================================
 @keyframes float {
   0%, 100% {
     transform: translateY(0);

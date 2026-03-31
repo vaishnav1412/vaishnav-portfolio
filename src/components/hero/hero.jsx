@@ -46,7 +46,18 @@ const Hero = ({ personalInfo, scrollToSection }) => {
             >
               <FiBriefcase /> View Work
             </button>
-            <a href={personalInfo.resume} className="btn-outline" download>
+            
+            {/* INLINE STYLES ADDED HERE TO FIX DARK MODE VISIBILITY */}
+            <a 
+              href={personalInfo.resume} 
+              className="btn-outline" 
+              download
+              style={{
+                background: "transparent",
+                color: "#818cf8", 
+                border: "1px solid #818cf8"
+              }}
+            >
               <FiDownload /> Resume
             </a>
           </div>

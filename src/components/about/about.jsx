@@ -115,7 +115,7 @@ const About = ({ personalInfo }) => {
 
         <div className="about-right">
           <div className="interests-section">
-            <h3>Interests & Hobbies</h3>
+            <h3>Interests &amp; Hobbies</h3>
             <div className="interests-grid">
               <div className="interest-item">
                 <FiCamera />

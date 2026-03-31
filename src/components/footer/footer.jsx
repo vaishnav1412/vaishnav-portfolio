@@ -3,23 +3,25 @@ import "./footer.scss"
 const Footer = () => {
   return (
     <footer className="footer">
-  <div className="footer-content">
-    <div className="footer-logo">
-      <span className="logo-text">VM</span>
-      <span className="logo-dot">.</span>
-    </div>
+      <div className="footer__content">
+        <div className="footer__logo">
+          <span className="footer__logo-text">VM</span>
+          <span className="footer__logo-dot">.</span>
+        </div>
 
-    <p className="footer-text">
-      Full-Stack Web Developer passionate about building scalable web
-      applications using modern technologies like React, Node.js, and
-      MongoDB.
-    </p>
+        <p className="footer__text">
+          Full-Stack Web Developer passionate about building scalable web
+          applications using modern technologies like React, Node.js, and
+          MongoDB.
+        </p>
 
-    <p className="copyright">
-      © {new Date().getFullYear()} Vaishnav V M. All rights reserved.
-    </p>
-  </div>
-</footer>
+        <div className="footer__divider" />
+
+        <p className="footer__copyright">
+          © {new Date().getFullYear()} Vaishnav V M. All rights reserved.
+        </p>
+      </div>
+    </footer>
   )
 }
 
