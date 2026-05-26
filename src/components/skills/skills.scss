@@ -1,73 +1,54 @@
 .skills-section {
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   background: var(--bg-secondary);
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-subtitle {
-  color: var(--primary-color);
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-}
-
-.title-underline {
-  width: 80px;
-  height: 4px;
-  background: var(--gradient-primary);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
 .skills-container {
   display: grid;
-  gap: 3rem;
+  gap: 3.5rem;
 }
 
 .category-title {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
   color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
 
   svg {
     color: var(--primary-color);
+    font-size: 1.75rem;
+    background: var(--glass-bg);
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
   }
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .skill-card {
-  background: var(--bg-primary);
-  color: var(--text-primary); /* <-- ADD THIS LINE */
-  padding: 1rem;
-  border-radius: 0.5rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
   border: 1px solid var(--border-color);
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  
   &:hover {
-    transform: translateX(5px);
+    transform: translateY(-5px);
     border-color: var(--primary-color);
     box-shadow: var(--shadow-md);
   }
@@ -76,110 +57,91 @@
 .skill-header {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.75rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .skill-icon {
   color: var(--primary-color);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .skill-name {
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .skill-progress {
-  height: 6px;
+  height: 8px;
   background: var(--bg-tertiary);
-  border-radius: 3px;
-  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .progress-bar {
   height: 100%;
   background: var(--gradient-primary);
-  border-radius: 3px;
+  border-radius: 4px;
   transition: width 1s ease;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 2s infinite;
+  }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 .skill-level {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
+  font-weight: 500;
+  display: block;
+  text-align: right;
 }
 
 /* ==========================================
    RESPONSIVE BREAKPOINTS
    ========================================== */
 
-/* Tablets */
 @media (max-width: 768px) {
   .skills-section {
-    padding: 4rem 1.5rem;
-  }
-
-  .section-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
+    padding: 6rem 1.5rem;
   }
 
   .skills-container {
-    gap: 2rem;
+    gap: 2.5rem;
   }
 
   .category-title {
-    font-size: 1.1rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
-  /* FIX: Disable sticky hover shift on touch screens */
   .skill-card:hover {
     transform: none;
-    box-shadow: none;
-    border-color: var(--border-color);
   }
 }
 
-/* Mobile Phones */
 @media (max-width: 480px) {
   .skills-section {
-    padding: 3rem 1.25rem;
+    padding: 4rem 1.25rem;
   }
 
-  .section-title {
-    font-size: 1.75rem;
-  }
-
-  /* Switch to 1 column. Progress bars look terrible 
-     when squeezed into narrow multi-column grids on mobile */
   .skills-grid {
     grid-template-columns: 1fr;
   }
 
   .skill-card {
-    padding: 0.9rem;
-  }
-
-  .skill-name {
-    font-size: 0.9rem;
-  }
-}
-
-/* Very small phones */
-@media (max-width: 360px) {
-  .skills-section {
-    padding: 2.5rem 1rem;
-  }
-
-  .skill-header {
-    gap: 0.4rem;
-  }
-
-  .skill-icon {
-    font-size: 1.1rem;
+    padding: 1.25rem;
   }
 }
